@@ -38,5 +38,5 @@ jobs:
           aws ecs update-service \
           --cluster token-screener-cluster-public \
           --service test \
-          --force-new-deployment true
+          --force-new-deployment
 
