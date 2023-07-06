@@ -38,3 +38,8 @@ jobs:
         run: |
           docker push ${{ env.ECR_REGISTRY }}/${{ env.name }}:${{ env.tag }}
           docker push ${{ env.ECR_REGISTRY }}/${{ env.name }}:latest
+          
+      - name: Update ECS service
+        run: |
+          aws ecs update-service --cluster token-screener-cluster-public --service test \
+          --force-new-deployment
