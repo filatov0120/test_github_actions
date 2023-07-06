@@ -1,0 +1,241 @@
+{
+    "service": {
+        "serviceArn": "arn:aws:ecs:***:***:service/token-screener-cluster-public/test",
+        "serviceName": "test",
+        "clusterArn": "arn:aws:ecs:***:***:cluster/token-screener-cluster-public",
+        "loadBalancers": [
+            {
+                "targetGroupArn": "arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e",
+                "containerName": "test",
+                "containerPort": 80
+            }
+        ],
+        "serviceRegistries": [],
+        "status": "ACTIVE",
+        "desiredCount": 2,
+        "runningCount": 2,
+        "pendingCount": 0,
+        "capacityProviderStrategy": [
+            {
+                "capacityProvider": "Infra-ECS-Cluster-token-screener-cluster-public-8eae2bf7-EC2CapacityProvider-RkVCVc4IuXUI",
+                "weight": 1,
+                "base": 0
+            }
+        ],
+        "taskDefinition": "arn:aws:ecs:***:***:task-definition/test:7",
+        "deploymentConfiguration": {
+            "deploymentCircuitBreaker": {
+                "enable": true,
+                "rollback": true
+            },
+            "maximumPercent": 150,
+            "minimumHealthyPercent": 100
+        },
+        "deployments": [
+            {
+                "id": "ecs-svc/9270794820793084051",
+                "status": "PRIMARY",
+                "taskDefinition": "arn:aws:ecs:***:***:task-definition/test:7",
+                "desiredCount": 0,
+                "pendingCount": 0,
+                "runningCount": 0,
+                "failedTasks": 0,
+                "createdAt": "2023-07-06T21:31:56.710000+00:00",
+                "updatedAt": "2023-07-06T21:31:56.710000+00:00",
+                "capacityProviderStrategy": [
+                    {
+                        "capacityProvider": "Infra-ECS-Cluster-token-screener-cluster-public-8eae2bf7-EC2CapacityProvider-RkVCVc4IuXUI",
+                        "weight": 1,
+                        "base": 0
+                    }
+                ],
+                "rolloutState": "IN_PROGRESS",
+                "rolloutStateReason": "ECS deployment ecs-svc/9270794820793084051 in progress."
+            },
+            {
+                "id": "ecs-svc/5017366211796143872",
+                "status": "ACTIVE",
+                "taskDefinition": "arn:aws:ecs:***:***:task-definition/test:7",
+                "desiredCount": 2,
+                "pendingCount": 0,
+                "runningCount": 2,
+                "failedTasks": 0,
+                "createdAt": "2023-07-06T20:59:37.807000+00:00",
+                "updatedAt": "2023-07-06T21:17:08.465000+00:00",
+                "capacityProviderStrategy": [
+                    {
+                        "capacityProvider": "Infra-ECS-Cluster-token-screener-cluster-public-8eae2bf7-EC2CapacityProvider-RkVCVc4IuXUI",
+                        "weight": 1,
+                        "base": 0
+                    }
+                ],
+                "rolloutState": "COMPLETED",
+                "rolloutStateReason": "ECS deployment ecs-svc/5017366211796143872 completed."
+            }
+        ],
+        "roleArn": "arn:aws:iam::***:role/aws-service-role/ecs.amazonaws.com/AWSServiceRoleForECS",
+        "events": [
+            {
+                "id": "9fee72fa-e762-4e4a-84d2-92c3ff3af13f",
+                "createdAt": "2023-07-06T21:17:08.474000+00:00",
+                "message": "(service test) has reached a steady state."
+            },
+            {
+                "id": "52d9a257-1641-4706-86e6-399058fb6e67",
+                "createdAt": "2023-07-06T21:16:50.112000+00:00",
+                "message": "(service test) registered 1 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "6acf0890-0fc0-42fc-8bdc-9e768a2f2240",
+                "createdAt": "2023-07-06T21:16:44.105000+00:00",
+                "message": "(service test, taskSet ecs-svc/5017366211796143872) has started 1 tasks: (task 5eae4a6d40f24c7f8aaafcf6de49c2e6)."
+            },
+            {
+                "id": "62a5a326-a694-4ff7-9da1-471e19134c52",
+                "createdAt": "2023-07-06T21:16:39.768000+00:00",
+                "message": "(service test) has started 1 tasks: (task 5eae4a6d40f24c7f8aaafcf6de49c2e6)."
+            },
+            {
+                "id": "130c2218-734e-4b95-8962-70c692a09111",
+                "createdAt": "2023-07-06T21:11:37.505000+00:00",
+                "message": "(service test) registered 1 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "8c3cbbe9-0411-440f-9d13-fafb0f698812",
+                "createdAt": "2023-07-06T21:11:29.118000+00:00",
+                "message": "(service test, taskSet ecs-svc/5017366211796143872) has started 1 tasks: (task f00a6c4ce7614bb69c21071f19e427a2)."
+            },
+            {
+                "id": "32aeb069-ea77-46c1-b17e-14975d82187a",
+                "createdAt": "2023-07-06T21:11:28.448000+00:00",
+                "message": "(service test) has started 1 tasks: (task f00a6c4ce7614bb69c21071f19e427a2)."
+            },
+            {
+                "id": "ecdc5bf5-59c8-4123-8fee-23d2105b7fbf",
+                "createdAt": "2023-07-06T21:11:28.197000+00:00",
+                "message": "(service test, taskSet ecs-svc/5017366211796143872) has begun draining connections on 2 tasks."
+            },
+            {
+                "id": "ebc43100-0d88-412a-aee8-fdd7afe13142",
+                "createdAt": "2023-07-06T21:11:28.191000+00:00",
+                "message": "(service test) deregistered 2 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "04e96076-fce4-48d3-a91f-f0e2ef505102",
+                "createdAt": "2023-07-06T21:09:11.044000+00:00",
+                "message": "(service test) has reached a steady state."
+            },
+            {
+                "id": "91a141de-5381-4330-9c32-8e88ebaa83cd",
+                "createdAt": "2023-07-06T21:09:11.043000+00:00",
+                "message": "(service test) (deployment ecs-svc/5017366211796143872) deployment completed."
+            },
+            {
+                "id": "ac565eb8-1be7-4292-850b-44a6d0912d1f",
+                "createdAt": "2023-07-06T21:08:04.538000+00:00",
+                "message": "(service test, taskSet ecs-svc/6493831445003274384) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "78c8f6bf-a7e2-45d5-b4a6-393e580c0f72",
+                "createdAt": "2023-07-06T21:08:04.532000+00:00",
+                "message": "(service test) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "dca62847-0e7a-4fca-ac0a-c31a5b0e89ec",
+                "createdAt": "2023-07-06T21:07:54.961000+00:00",
+                "message": "(service test) has stopped 1 running tasks: (task 7f9320b86ad34c67ab0caba63eb4febd)."
+            },
+            {
+                "id": "426801bb-bdf3-4835-95ff-1d5d4fa7d6b0",
+                "createdAt": "2023-07-06T21:06:57.450000+00:00",
+                "message": "(service test) registered 1 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "f308bef5-b45b-4e88-8fd9-97637aeddc61",
+                "createdAt": "2023-07-06T21:06:49.098000+00:00",
+                "message": "(service test, taskSet ecs-svc/5017366211796143872) has started 1 tasks: (task 0f7f43165331417a9688e0c71bc4e234)."
+            },
+            {
+                "id": "629aaee0-92fc-4cc4-ba7b-c8588f184d44",
+                "createdAt": "2023-07-06T21:06:46.950000+00:00",
+                "message": "(service test) has started 1 tasks: (task 0f7f43165331417a9688e0c71bc4e234)."
+            },
+            {
+                "id": "065f390e-e57a-4f69-9095-2702c65ab2e8",
+                "createdAt": "2023-07-06T21:01:22.435000+00:00",
+                "message": "(service test, taskSet ecs-svc/6493831445003274384) has begun draining connections on 1 tasks."
+            },
+            {
+                "id": "3634f54d-5d15-4478-9e72-b618c4df903c",
+                "createdAt": "2023-07-06T21:01:22.431000+00:00",
+                "message": "(service test) deregistered 1 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "6d6bb1dc-02ab-4248-911c-4def8b7a44c2",
+                "createdAt": "2023-07-06T21:01:12.146000+00:00",
+                "message": "(service test) has stopped 1 running tasks: (task ed5287126dff4a19b630bfbf8a23b86f)."
+            },
+            {
+                "id": "6dbcf94f-ea62-490b-9fa9-5841e75dd40f",
+                "createdAt": "2023-07-06T21:00:24.093000+00:00",
+                "message": "(service test) registered 1 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "78a04d7a-581b-427d-8c18-63bdd84b9ddf",
+                "createdAt": "2023-07-06T21:00:09.116000+00:00",
+                "message": "(service test, taskSet ecs-svc/5017366211796143872) has started 1 tasks: (task e9fe7964c9544b0085fcf413c394342b)."
+            },
+            {
+                "id": "bcf57dfa-7d9c-4af6-9162-e305179642b3",
+                "createdAt": "2023-07-06T21:00:04.569000+00:00",
+                "message": "(service test) has started 1 tasks: (task e9fe7964c9544b0085fcf413c394342b)."
+            },
+            {
+                "id": "3a634a74-ba54-456d-85a6-5dd2bd33186c",
+                "createdAt": "2023-07-06T20:09:57.556000+00:00",
+                "message": "(service test) has reached a steady state."
+            },
+            {
+                "id": "a12db469-3f12-4f1d-86b0-c7ea7ea41dc1",
+                "createdAt": "2023-07-06T20:09:57.555000+00:00",
+                "message": "(service test) (deployment ecs-svc/6493831445003274384) deployment completed."
+            },
+            {
+                "id": "d79d02b2-984a-42db-810e-f19429d52708",
+                "createdAt": "2023-07-06T20:09:37.280000+00:00",
+                "message": "(service test) registered 2 targets in (target-group arn:aws:elasticloadbalancing:***:***:targetgroup/token-screener/e3b4eef5ea447a6e)"
+            },
+            {
+                "id": "458428ce-15af-4213-8357-d597d10be71a",
+                "createdAt": "2023-07-06T20:09:21.732000+00:00",
+                "message": "(service test, taskSet ecs-svc/6493831445003274384) has started 2 tasks: (task 7f9320b86ad34c67ab0caba63eb4febd) (task ed5287126dff4a19b630bfbf8a23b86f)."
+            },
+            {
+                "id": "b450910f-98de-42c8-8c51-86aaefa80cec",
+                "createdAt": "2023-07-06T20:09:16.833000+00:00",
+                "message": "(service test) has started 2 tasks: (task 7f9320b86ad34c67ab0caba63eb4febd) (task ed5287126dff4a19b630bfbf8a23b86f)."
+            }
+        ],
+        "createdAt": "2023-07-06T20:09:09.087000+00:00",
+        "placementConstraints": [],
+        "placementStrategy": [
+            {
+                "type": "spread",
+                "field": "attribute:ecs.availability-zone"
+            },
+            {
+                "type": "spread",
+                "field": "instanceId"
+            }
+        ],
+        "healthCheckGracePeriodSeconds": 0,
+        "schedulingStrategy": "REPLICA",
+        "deploymentController": {
+            "type": "ECS"
+        },
+        "createdBy": "arn:aws:iam::***:user/olexander.f",
+        "enableECSManagedTags": true,
+        "propagateTags": "NONE",
+        "enableExecuteCommand": false
+    }
+}
