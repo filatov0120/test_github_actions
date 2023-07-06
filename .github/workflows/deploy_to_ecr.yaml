@@ -39,17 +39,12 @@ jobs:
           docker push ${{ env.ECR_REGISTRY }}/${{ env.name }}:${{ env.tag }}
           docker push ${{ env.ECR_REGISTRY }}/${{ env.name }}:latest
 
-      - name: Download task definition
-        run: |
-          aws ecs describe-task-definition --task-definition \
-          test --query taskDefinition > task-definition.json
-
       - name: Create new task definition revision
         id: create-task-definition
         run: |
           aws ecs register-task-definition \
             --family test \
-            --cli-input-json file://task-definition.json
+            --cli-input-json file://task_definition.json
 
       - name: Update ECS service
         run: |
