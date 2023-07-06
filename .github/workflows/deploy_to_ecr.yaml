@@ -48,6 +48,5 @@ jobs:
 
       - name: Update ECS service
         run: |
-          aws ecs update-service --cluster token-screener-cluster-public --service test \
-          --force-new-deployment
+          aws ecs update-service --cluster token-screener-cluster-public --service test --force-new-deployment
 
