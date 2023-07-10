@@ -1,9 +1,9 @@
 <head>
-    <title>IP-адрес хоста v1</title>
+    <title>IP-адрес хоста v2</title>
 </head>
 
 <body>
-    <h1>IP-адрес хоста v1:</h1>
+    <h1>IP-адрес хоста v2:</h1>
     <p>
         <strong>
             <?php
