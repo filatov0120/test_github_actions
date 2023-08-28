@@ -1,0 +1,47 @@
+name: Build_and_deploy
+
+on:
+  workflow_dispatch:
+  push: 
+    branches: 
+        - main
+    paths-ignore:
+        - '.github/workflows/**'
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    env:
+      name: ${GITHUB_REPOSITORY#*/}
+      key: "ssh"
+      tag: ${GITHUB_SHA}
+      host: ${{ secrets.NAME_IP }}
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Save secret key
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > ${key}
+          sudo chmod 600 ${key}
+          
+      - name: Build docker
+        run: |    
+          docker build . -t ${{ env.name }}:${{ env.tag }}
+
+      - name: Save image
+        run: |           
+          docker save -o ${{ env.name }}.tar ${{ env.name }}:${{ env.tag }}
+
+
+      - name: Copy image
+        run: |
+          scp -i ${key} -o "StrictHostKeyChecking no" ${{ env.name }}.tar ${{ env.host }}:${{ env.name }}.tar
+      
+      - name: Start image
+        run: |
+          ssh -i ${key} -o "StrictHostKeyChecking no" ${{ env.host }} 'sudo docker load -i '${{ env.name }}'.tar; \
+          sudo docker stop '${{ env.name }}' ; \
+          sudo docker run -d --restart always -p 3000:3000 --name '${{ env.name }}'-new '${{ env.name }}':'${{ env.tag }}'; \
+          sudo docker rm '${{ env.name }}'; sudo docker rmi $(sudo docker images -q); \
+          sudo docker rename '${{ env.name }}'-new '${{ env.name }}'; rm '${{ env.name }}'.tar'
