@@ -27,8 +27,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker build . -t ${{ env.TEST_ECR_REGISTRY }}/${{ env.name }}:${{ env.tag }}
-          docker tag ${{ env.TEST_ECR_REGISTRY }}/${{ env.name }}:${{ env.tag }} ${{ env.TEST_ECR_REGISTRY }}/${{ env.name }}:latest
+          docker build . -t ${{ env.TEST_ECR_REGISTRY }}:${{ env.tag }}
 
       - name: Login to Amazon ECR
         id: login-ecr
