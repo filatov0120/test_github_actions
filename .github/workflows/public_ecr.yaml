@@ -35,4 +35,4 @@ jobs:
 
       - name: Push Docker image to ECR
         run: |
-          docker push ${{ env.ECR_REGISTRY }}/${{ env.name }}:latest
+          docker push ${{ env.ECR_REGISTRY }}:latest
