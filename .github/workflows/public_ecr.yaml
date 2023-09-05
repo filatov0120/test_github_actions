@@ -27,7 +27,7 @@ jobs:
 
       - name: Build docker image
         run: |
-          docker build . -t ${{ env.TEST_ECR_REGISTRY }}:latest
+          docker build . -t ${{ env.ECR_REGISTRY }}:latest
 
       - name: Login to Amazon ECR
         id: login-ecr
@@ -35,4 +35,4 @@ jobs:
 
       - name: Push Docker image to ECR
         run: |
-          docker push ${{ env.TEST_ECR_REGISTRY }}/${{ env.name }}:latest
+          docker push ${{ env.ECR_REGISTRY }}/${{ env.name }}:latest
