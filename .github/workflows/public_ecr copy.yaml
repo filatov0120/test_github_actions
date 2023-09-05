@@ -18,13 +18,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # - name: Login to Amazon ECR Public
-      #   id: login-ecr-public
-      #   uses: aws-actions/amazon-ecr-login@v1
-      #   with:
-      #     mask-password: 'false'
-      #     registry-type: public
-
       - name: Build, tag, and push docker image to Amazon ECR Public
         env:
           REGISTRY: i6t0p5x2
