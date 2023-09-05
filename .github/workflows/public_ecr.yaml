@@ -31,7 +31,7 @@ jobs:
       - name: Login to Amazon ECR Public
         uses: aws-actions/amazon-ecr-login@v1
         with:
-          mask-password: 'false'
+          mask-password: 'true'
           registry-type: public   
 
       - name: Build, tag, and push docker image to Amazon ECR Public
