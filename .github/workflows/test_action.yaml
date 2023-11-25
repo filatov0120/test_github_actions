@@ -1,0 +1,13 @@
+name: Update ECR service
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_and_push_ECR:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Step
+        run: rmdir qwerty
+
+
