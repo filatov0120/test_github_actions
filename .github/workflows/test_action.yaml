@@ -2,10 +2,14 @@ name: Test error action
 
 on:
   workflow_dispatch:
+  pull_request: 
+  push:
 
 jobs:
-  build_and_push_ECR:
+  lint:
     runs-on: ubuntu-22.04
     steps:
-      - name: Step
-        run: rmdir qwerty
+      - name: step
+        run: |
+          rmdir qwerty
+          exit 1
