@@ -1,4 +1,4 @@
-name: Update ECR service
+name: Test error action
 
 on:
   workflow_dispatch:
@@ -9,5 +9,3 @@ jobs:
     steps:
       - name: Step
         run: rmdir qwerty
-
-
