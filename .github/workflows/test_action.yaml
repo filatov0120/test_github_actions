@@ -1,4 +1,4 @@
-name: Update ECR service
+name: Test error action
 
 on:
   workflow_dispatch:
